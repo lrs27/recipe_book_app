@@ -54,11 +54,11 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/
-    - assets/images/pasta.png
-    - assets/images/caesar-salad.png
-    - assets/images/chicken_curry.png
-    - assets/images/pancakes.png
+    - lib/assets/images/
+    - lib/assets/images/pasta.png
+    - lib/assets/images/caesar-salad.png
+    - lib/assets/images/chicken_curry.png
+    - lib/assets/images/pancakes.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

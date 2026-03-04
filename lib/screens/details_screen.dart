@@ -2,23 +2,38 @@ import 'package:flutter/material.dart';
 import 'package:recipe_book_app/models/recipe.dart';
 
 class DetailsScreen extends StatelessWidget {
+  
   final Recipe recipe;
   const DetailsScreen({super.key, required this.recipe});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(recipe.name)),
+      appBar: AppBar(
+        title: Text(recipe.name),
+        backgroundColor: Colors.orange,
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const SizedBox(height: 16),
             // Hero image
-            Image.asset(
-              recipe.imagePath,
-              height: 220,
-              width: double.infinity,
-              fit: BoxFit.cover,
+            Center(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black, width: 2),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  child: Image.asset(
+                    recipe.imagePath,
+                    width: 200,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
             ),
             // Name, Ingredients, Instructions…
             Padding(
@@ -37,7 +52,7 @@ class DetailsScreen extends StatelessWidget {
                   ),
                   ...recipe.ingredients
                       .map((ingredient) => Text('- $ingredient'))
-                      .toList(),
+                      ,
                   const SizedBox(height: 8),
                   Text(
                     'Instructions:',
